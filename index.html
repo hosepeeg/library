@@ -12,16 +12,40 @@
     <div class="library-content">
         <h1>Libray App</h1>
         <h3>By Hovsep Kourbouchian</h3>
-        <button>Add Book</button>
-        <div class="book-content">
-            <div class="table-header">
-                <p>Title</p>
-                <p>Author</p>
-                <p>Pages</p>
-                <p>Read</p>
+
+        <div class="content-container">
+
+            <div class="book-content">
+                <div class="book">
+                    <h2>Ship Wreck</h2>
+                    <p>Mark Bonnie</p>
+                    <p>423</p>
+                    <input type="checkbox">
+                </div>
             </div>
-            <div class="book">
-                
+
+            <div class="form-content">
+                <form id="first-form">
+                    <label for="title"> Title: 
+                        <input type="text" id="title" name="title" required="">
+                    </label>
+    
+                    <label for="author"> Author: 
+                        <input type="text" id="author" name="author" required="">
+                    </label>
+    
+                    <label for="pages"> Pages: 
+                        <input type="number" id="pages" name="pages" required="">
+                    </label>
+    
+                    <label for="read"> Read: 
+                        <input type="checkbox" id="read" name="read" required=""">
+                    </label>
+    
+                    <div class="submit">
+                        <button type="button" class="addBook">Add Book</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
