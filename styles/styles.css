@@ -62,8 +62,8 @@ form label{
     display: grid;
     margin: 2rem;
     gap: 2rem;
-    grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    grid-template-rows: repeat(auto-fit, 11rem);
+    grid-template-columns: repeat(auto-fit, 11rem);
 }
 
 .book{
