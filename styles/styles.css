@@ -40,3 +40,20 @@ form label{
     display: flex;
     flex-direction: column;
 }
+
+.read{
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.addBook{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 5px;
+    background-color: rgb(245, 194, 118);
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid rgb(185, 183, 183);
+}
