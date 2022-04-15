@@ -57,3 +57,24 @@ form label{
     padding-right: 15px;
     border: 1px solid rgb(185, 183, 183);
 }
+
+.book-content{
+    display: grid;
+    margin: 2rem;
+    gap: 2rem;
+    grid-template-rows: repeat(auto-fit, minmax(10rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+}
+
+.book{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    border-left: 10px solid rgb(245, 194, 118);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 30%), 0 2px 4px -2px rgb(0 0 0 / 30%);
+}
