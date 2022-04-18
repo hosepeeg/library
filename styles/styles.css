@@ -78,3 +78,8 @@ form label{
     border-left: 10px solid rgb(245, 194, 118);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 30%), 0 2px 4px -2px rgb(0 0 0 / 30%);
 }
+
+#error, .error{
+    text-align: center;
+    color: red;
+}
