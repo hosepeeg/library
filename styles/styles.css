@@ -66,8 +66,8 @@ form label{
     display: grid;
     margin: 2rem;
     gap: 2rem;
-    grid-template-rows: repeat(auto-fit, 11rem);
-    grid-template-columns: repeat(auto-fit, 11rem);
+    grid-template-rows: repeat(auto-fit, 13rem);
+    grid-template-columns: repeat(auto-fit, 13rem);
 }
 
 .book{
@@ -80,6 +80,12 @@ form label{
     background-color: white;
     border-left: 10px solid rgb(245, 194, 118);
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 30%), 0 2px 4px -2px rgb(0 0 0 / 30%);
+}
+
+h2, p{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 #error, .error{
@@ -96,7 +102,8 @@ form label{
 
 .post-img{
     width: 2rem;
-    margin-left: 70%;
+    margin-top: auto;
+    margin-left: auto;
 }
 
 img:hover, button:hover{
