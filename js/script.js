@@ -93,8 +93,13 @@ const printBook = (newBook, checked) => {
   let bookRead = document.createElement('input');
   bookRead.type = "checkbox";
   if(checked == true) bookRead.checked = true;
-
   book.appendChild(bookRead);
+
+  //add delete button
+  let deleteButton = document.createElement('button');
+  deleteButton.classList.add('deleteBook');
+  deleteButton.innerHTML = 'gdf';
+  book.appendChild(deleteButton);
 }
 
 function addBookToLibrary() {
