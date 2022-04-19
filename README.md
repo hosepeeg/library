@@ -6,3 +6,4 @@ Will be creating a Library app, that stores book data into a class (title, autho
 Created the library app using local storage. All data is stored in an array, and removed (from screen and array) user selected book (onlcick with trashcan image).
 
 # Link
+https://hosepeeg.github.io/library/
