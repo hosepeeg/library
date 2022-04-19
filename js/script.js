@@ -5,8 +5,11 @@ const author = form.querySelector('#author');
 const pages = form.querySelector('#pages');
 const read = form.querySelector('#read');
 const bookContent = document.querySelector('.book-content');
+const trash = document.querySelector('.post-img')
+
 
 let myLibrary = [];
+let librarySize = myLibrary.length;
 let book = {};
 
 function Book(author, title, pages, read) {
@@ -95,11 +98,21 @@ const printBook = (newBook, checked) => {
   if(checked == true) bookRead.checked = true;
   book.appendChild(bookRead);
 
-  //add delete button
-  let deleteButton = document.createElement('button');
-  deleteButton.classList.add('deleteBook');
-  deleteButton.innerHTML = 'gdf';
+  //add delete button, and id based on array value
+  let deleteButton = document.createElement('img');
+  deleteButton.classList.add('post-img');
+  deleteButton.src = "./imgs/trash-can-outline.png"
+  deleteButton.alt = 'garbage icon';
+  deleteButton.setAttribute('id', librarySize)
+  deleteButton.addEventListener('click', function (e) {
+    let id = e.target.getAttribute('id');           //find clicked books ID
+    let selectedBook = document.getElementById(id); //store element based on ID
+    selectedBook = selectedBook.parentNode;         //store elements parent node (the book itself)
+    selectedBook.remove();                          //remove clicked book
+  })
+
   book.appendChild(deleteButton);
+
 }
 
 function addBookToLibrary() {
@@ -107,7 +120,7 @@ function addBookToLibrary() {
   if(validateForm() == false) return;                                      //if invalid form, do not create book
   if(document.querySelector('#error')) removeErrorMessage();               //remove error if there was any
   
-  let librarySize = myLibrary.length;                                      //create variable to hold the new book index #
+  librarySize = myLibrary.length;                                      //create variable to hold the new book index #
   let checked = read.checked;                                              //hold value of read checkbox
 
   book = new Book(author.value, title.value, pages.value, read.value);     //creates book based on input
@@ -116,5 +129,6 @@ function addBookToLibrary() {
 
   printBook(myLibrary[librarySize], checked);                              //creates and adds new book element into grid
 }
+
 
 submitButton.addEventListener('click', addBookToLibrary);
