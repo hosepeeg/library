@@ -4,6 +4,7 @@ const title = form.querySelector('#title');
 const author = form.querySelector('#author');
 const pages = form.querySelector('#pages');
 const read = form.querySelector('#read');
+const bookContent = document.querySelector('.book-content');
 
 let myLibrary = [];
 let book = {};
@@ -66,13 +67,49 @@ const validateForm = () => {
   else return true;
 }
 
+const printBook = (newBook, checked) => {
+  let book = document.createElement('div');   //create new book element
+  book.classList.add('book');                 //add class to book element
+  bookContent.appendChild(book);      //add book element to book content (grid)
+
+  //populate data of newBook into book element
+
+  //create and add title of book
+  let bookTitle = document.createElement('h2');
+  bookTitle.innerHTML = newBook.title;
+  book.appendChild(bookTitle);
+
+  //create and add author of book
+  let bookAuthor = document.createElement('p');
+  bookAuthor.innerHTML = newBook.author;
+  book.appendChild(bookAuthor);
+
+  //create and add page # of book
+  let bookPages = document.createElement('p');
+  bookPages.innerHTML = newBook.pages;
+  book.appendChild(bookPages);
+
+  //create and add 'read' checkbox of book
+  let bookRead = document.createElement('input');
+  bookRead.type = "checkbox";
+  if(checked == true) bookRead.checked = true;
+
+  book.appendChild(bookRead);
+}
+
 function addBookToLibrary() {
   //Add a book to libray
   if(validateForm() == false) return;                                      //if invalid form, do not create book
   if(document.querySelector('#error')) removeErrorMessage();               //remove error if there was any
+  
+  let librarySize = myLibrary.length;                                      //create variable to hold the new book index #
+  let checked = read.checked;                                              //hold value of read checkbox
+
   book = new Book(author.value, title.value, pages.value, read.value);     //creates book based on input
   myLibrary.push(book);                                                    //pushes into array
   clearInput();                                                            //clears input field
+
+  printBook(myLibrary[librarySize], checked);                              //creates and adds new book element into grid
 }
 
 submitButton.addEventListener('click', addBookToLibrary);
