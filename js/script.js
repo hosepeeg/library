@@ -109,6 +109,11 @@ const printBook = (newBook, checked) => {
     let selectedBook = document.getElementById(id); //store element based on ID
     selectedBook = selectedBook.parentNode;         //store elements parent node (the book itself)
     selectedBook.remove();                          //remove clicked book
+    
+    //loop through array and delete matching element from local storage
+    for (const element of myLibrary) {
+      if(element.title == selectedBook.querySelector('h2').innerHTML) myLibrary.splice(myLibrary.indexOf(element), 1);
+    }
   })
 
   book.appendChild(deleteButton);
